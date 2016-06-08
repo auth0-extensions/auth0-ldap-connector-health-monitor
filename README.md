@@ -9,7 +9,7 @@ This extension will expose an endpoint you can use from your monitoring tool to 
 ```
 npm i -g wt-cli
 wt init
-wt create https://raw.githubusercontent.com/auth0/auth0-ldap-connector-health-monitor/master/index.js \
+wt create https://raw.githubusercontent.com/auth0/auth0-ldap-conector-health-monitor/master/index.js \
     --name auth0-ldap-connector-health-monitor \
     --secret AUTH0_DOMAIN="YOUR_AUTH0_DOMAIN" \
     --secret AUTH0_GLOBAL_CLIENT_ID="YOUR_AUTH0_GLOBAL_CLIENT_ID" \
