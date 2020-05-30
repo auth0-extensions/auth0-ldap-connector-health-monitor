@@ -22,7 +22,7 @@ const PAGE_SIZE = 100;
 const MAX_AGE = 60000;
 
 /**
- * Fetch all 'ad' and 'auth0-adldap' connections.
+ * Fetch all 'ad' connections.
  * @param {string} token access token with read:connections scope
  * @param {number} [page] page number
  * @param {Function} cb callback with connection array
@@ -42,7 +42,7 @@ function getConnections(domain, token, page, cb) {
       'Authorization': `Bearer ${token}`
     },
     qs: {
-      strategy: ['ad', 'auth0-adldap'],
+      strategy: ['ad'],
       page,
       per_page: PAGE_SIZE,
       fields: 'id,name'

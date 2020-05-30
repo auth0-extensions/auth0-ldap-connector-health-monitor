@@ -1,7 +1,7 @@
 {
   "title": "Auth0 AD/LDAP Connector Health Monitor",
   "name": "auth0-ldap-conector-health-monitor",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "author": "auth0",
   "description": "This extension will expose an endpoint you can use from your monitoring tool to monitor your AD/LDAP Connectors",
   "type": "application",
