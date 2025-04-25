@@ -1,0 +1,31 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_ROLE: ${{ secrets.awsIAMS3UploadRole }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2
+
+      - name: Configure AWS Credentials using OIDC
+        uses: aws-actions/configure-aws-credentials@ececac1a45f3b08a01d2dd070d28d111c5fe6722 # v4.1 on 2025-04-30
+        with:
+          role-to-assume: ${{ env.AWS_ROLE }}
+          role-session-name: github-ldap-connector-health-monitor-publish
+          aws-region: us-west-1
+
+      - name: Run Deploy
+        run: sh tools/cdn.sh
