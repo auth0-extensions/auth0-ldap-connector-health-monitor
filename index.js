@@ -10,10 +10,10 @@
  * calls to the GET /api/v2/connections endpoint so we don't impact the tenant rate limits.
  */
 
-const createError = require('http-errors')
-const request = require('request');
+const createError = require('http-errors@1.3.1');
+const request = require('request@2.88.2');
 const url = require('url');
-const lruMemoizer = require('lru-memoizer');
+const lruMemoizer = require('lru-memoizer@1.10.0');
 
 /** number of connections to retrieve per page */
 const PAGE_SIZE = 100;
